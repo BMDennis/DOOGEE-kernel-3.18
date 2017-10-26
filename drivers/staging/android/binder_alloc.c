@@ -960,7 +960,6 @@ enum lru_status binder_alloc_free_page(struct list_head *item,
 	return LRU_REMOVED_RETRY;
 
 err_down_write_mmap_sem_failed:
-	mmput_async(mm);
 err_mmget:
 err_page_already_freed:
 	mutex_unlock(&alloc->mutex);
